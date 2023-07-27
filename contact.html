@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Winters AI </title>
+    <link rel="icon" href="img/logo2.png" type="image/icon type">
+    <link rel="stylesheet" href="support.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand">Winters</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="exp.html">Explore</a>
+                <a href="sign in.html">Sign In</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <video class="video-slide active" src="vids/8.mp4" autoplay muted loop></video>
+        <div class="content1 active">
+            <h2>Contact Us</h2>
+            <p>Thank you for using our voice assistant! We value your feedback and are here to assist you with any questions or concerns you may have. Please don't hesitate to reach out to us using one of the following methods:</p>
+        </div>
+        <div class="container active">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icons"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                    <div class="texts">
+                        <h3>Address</h3>
+                        <p>316 Central Ave SW,<br>Albuquerque, New York,<br>87108</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icons"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="texts">
+                        <h3>Phone</h3>
+                        <p>(575) 391-2934</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icons"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="texts">
+                        <h3>Email</h3>
+                        <p>winters.assistant@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        //Javascript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+    
+        menuBtn.addEventListener("click",()=>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+    
+        //Javascript for video slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+    
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+    
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+    
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+            
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+    
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+        </script>
+</body>
+</html>
